@@ -1,0 +1,162 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e5e5e6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+    text-align: center;
+}
+
+h1 {
+    color: blue;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.input-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+label {
+    color: #1a1a1a;
+    font-size: 20px;
+}
+
+.input-container {
+    position: relative;
+}
+
+input[type='text'] {
+    width: 400px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #9da1a5;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 16px;
+    color: blue;
+    border-radius: 1rem;
+}
+
+.copy-button {
+    background-color: #04fbff;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 22px 30px;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    margin-left: 0.4em;
+}
+
+.copy-button:hover {
+    background-color: #f91111;
+}
+
+.copy-button i {
+    position: relative;
+    z-index: 1;
+}
+
+.copy-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.copy-button:hover::before {
+    opacity: 1;
+}
+
+.copy-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 24px;
+    height: 24px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.copy-button.copied::after {
+    content: '\2713';
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    color: #00ff00; /* Green color */
+}
+
+@keyframes checkmark {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.output-section {
+    text-align: center;
+}
+
+h2 {
+    color: blue;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#output-text {
+    font-size: 16px;
+    white-space: pre-wrap;
+    display: inline-block;
+    text-align: left;
+    color: blue;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #e5e5e6;
+    padding: 20px 0;
+    text-align: center;
+    color: blue;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+/* Additional CSS for black social media icons */
+.social-links a {
+    color: blue; /* Black color */
+}
